@@ -1,6 +1,6 @@
 from typing import *
-import numpy as np
-import sympy as sp
+import numpy as np #type: ignore
+import sympy as sp #type: ignore
 
 
 X = TypeVar("X")

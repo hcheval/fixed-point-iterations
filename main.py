@@ -1,19 +1,30 @@
+from mimetypes import init
 from Iteration import *
 
-iter = Mann(
-    space = lp(), 
-    parameters = lambda n: 1./(n + 1), 
-    operator = lambda x: 0.5 * x
+iter = TikhonovMann(
+    space = FiniteDimensional(1),
+    parameters1 = lambda n: n/(n + 1), 
+    parameters2 = lambda n: 0.5, 
+    operator = lambda x: np.sqrt(x ** 2 + 5),
+    initial = np.array([0]),
+    origin = np.array([7])
 )
-iter.initial = 1 / (sp.Symbol("n") + 1)
 
-iter.run_steps(10000)
-iter.as_reg(plotting = True)
-iter.as_reg_to_op(plotting = True)
-iter.steps_until_as_reg(epsilons=[1./n for n in range(1, 100)])
+
+# [print(iter[i]) for i in range(0, 1000)]
+
+plt.figure(0)
+as_reg_errs = iter.get_as_reg_errs(100)
+as_reg_to_op_errs = iter.get_as_reg_to_op_errs(100)
+plt.plot(as_reg_errs)
+plt.plot(as_reg_to_op_errs)
+
+plt.figure(1)
+steps_until = iter.get_steps_until_as_reg_errs(10)
+plt.plot(steps_until)
+
+plt.figure(2)
+steps_until_op = iter.get_steps_until_as_reg_to_op_errs(10)
+plt.plot(steps_until_op)
 
 plt.show()
-
-
-# from sympy.abc import *
-# sp.pprint(sp.summation(1 / (n**2), (n, 1, sp.oo)).evalf())
