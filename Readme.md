@@ -7,7 +7,7 @@ For a structure $(X, d, W)$ to be called a $W$-hyperbolic space, it it is requir
 
 In this project, one defines a $W$-hyperbolic space by choosing a type $X$, representing the points in the space, an appropriate distance function, and an appropriate convexity mapping, defined on $X$.
 Examples of such spaces defined in this project are:
-$\bb{R}$ for different norms (the ones given by numpy) 
+$\mathbb{R}$ for different norms (the ones given by numpy) 
 $\mathcal{l}^p$ spaces 
 $L^p([a, b])$ spaces
 
