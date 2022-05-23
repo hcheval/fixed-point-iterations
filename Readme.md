@@ -1,0 +1,1 @@
+A framework for implementing fixed point iterations in $W$-hyperbolic spaces.

@@ -31,6 +31,8 @@ class Iteration(Generic[X]):
         self._computed_values = [new_initial]
         self._computed_as_reg_err = []
         self._computed_as_reg_to_op_err = []
+        self._computed_steps_until_as_reg_err = []
+        self._computed_steps_until_as_reg_to_op_err = []
 
     @property
     def initial(self): 
