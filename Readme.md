@@ -6,3 +6,5 @@ $x$ and $y$ of parameter $\lambda$.
 For a structure $(X, d, W)$ to be called a $W$-hyperbolic space, it it is required to furthermore satisfy a number of axioms, which are not relevant to this implementation.
 
 In this project, one defines a $W$-hyperbolic space by choosing a type $X$, representing the points in the space, an appropriate distance function, and an appropriate convexity mapping, defined on $X$.
+Examples of such spaces defined in this project are:
+- $\mathbb{R}$ 
