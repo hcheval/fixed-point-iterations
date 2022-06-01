@@ -1,6 +1,9 @@
+from mimetypes import init
 from typing import *
 import numpy as np #type: ignore
 import sympy as sp #type: ignore
+import geomstats.backend as gs 
+from geomstats.geometry.hyperbolic import Hyperboloid 
 
 
 X = TypeVar("X")
@@ -35,4 +38,13 @@ class lp(WHyperbolicSpace[sp.core.function.FunctionClass]):
         WHyperbolicSpace.__init__(self,
             dist = lambda x, y: (sp.summation(sp.Abs(x - y) ** order, (variable, 0, sp.oo)) ** (1 / order)).evalf(),
             W = lambda x, y, a: (1 - a) * x + a * y
+        )
+
+class Hyperbolic(WHyperbolicSpace[gs.array]):    
+    def __init__(self, dim):
+        self.dim = dim 
+        self.space = Hyperboloid(dim=dim, coords_type="extrinsic")
+        WHyperbolicSpace.__init__(self,
+            W = lambda x, y, a: self.space.metric.geodesic(initial_point=x, end_point=y)(a),
+            dist = lambda x, y: self.space.metric.dist(x, y)
         )

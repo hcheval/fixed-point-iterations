@@ -29,14 +29,14 @@ For example, let us define the Mann iteration, governed by the update rule $x_{n
 class Mann(Iteration):
     def __init__(self, space, parameters: Callable[[int], float], operator: Callable[[X], X], initial: X):
         Iteration.__init__(self, 
-            space = space,
-            operator = lambda x, n: operator(x),
+            space = space, 
+            operator = lambda x, n: operator(x), 
             initial = initial
         )
         self.parameters = parameters
 
     def update(self, curr, step):
-        return self._space.W(self.anchor, self._operator(curr, 0), self.parameters(step))
+        return self._space.W(curr, self._operator(curr, 0), self.parameters(step))
 ```
 
 TODO: 
@@ -46,5 +46,6 @@ TODO:
 Packages required:
 - numpy 
 - sympy 
+- geomstats
 - matplotlib 
 - tqdm 
