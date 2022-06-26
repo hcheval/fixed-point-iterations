@@ -1,6 +1,6 @@
 A framework for implementing, simulating and visualizing fixed point iterations in $W$-hyperbolic spaces.
 
-A $W$ hyperbolic space is a metric space $(X, d)$ endowed with a convexity mapping $W : X \times X \times [0, 1] \to X$,
+A W hyperbolic space is a metric space $(X, d)$ endowed with a convexity mapping $W : X \times X \times [0, 1] \to X$,
 where $W(x, y, \lambda)$ is intended to abstractly represent a convex combination of the points 
 $x$ and $y$ of parameter $\lambda$, satisfying a number of axioms.
 
