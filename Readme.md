@@ -2,7 +2,7 @@ A framework for implementing, simulating and visualizing fixed point iterations 
 
 A W-hyperbolic space is a metric space $(X, d)$ endowed with a convexity mapping $W : X \times X \times [0, 1] \to X$,
 where $W(x, y, \lambda)$ is intended to abstractly represent a convex combination of the points 
-$x$ and $y$ of parameter $\lambda$, satisfying a number of axioms.
+$x$ and $y$ of parameter $ \lambda$, satisfying a number of axioms.
 
 In this project, one defines a $W$-hyperbolic space by choosing a type $X$ representing the points in the space, an appropriate distance function, and an appropriate convexity mapping defined on $X$.
 Examples of such spaces defined in this project are:
