@@ -24,7 +24,7 @@ setting the space in which the iteration takes place,
 the initial value,
 and the operator relative to which asymptotic regularity should be computed (this may be left as `None`).
 
-For example, let us define the Mann iteration, governed by the update rule $x_{n + 1} = W(x_n, T_n, \lambda_n)$:
+For example, let us define the Mann iteration, governed by the update rule $x_{n + 1} = W(x_n, T, \lambda_n)$:
 ```
 class Mann(Iteration):
     def __init__(self, space, parameters: Callable[[int], float], operator: Callable[[X], X], initial: X):
